@@ -41,10 +41,11 @@ defmodule Issues.CLI do
   end
 
   def process({ user, project, count }) do
-    Issues.GitHubIsuees.fetch(user, project)
+    Issues.GitHubIssues.fetch(user, project)
       |> decode_response
       |> sort_into_ascending_order
       |> Enum.take(count)
+      |> Issues.TableFormatter.format(["number", "created_at", "title"])
   end
 
   def decode_response({ :ok, body }), do: body
