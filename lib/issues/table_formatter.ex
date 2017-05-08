@@ -6,7 +6,6 @@ defmodule Issues.TableFormatter do
   def format(issues, headers) do
     with columns = _make_printable_rows(issues, headers),
           column_widths = Enum.map(columns, &_set_width(&1)) do
-      IO.puts inspect column_widths
       _print_row(headers, column_widths, " | ")
       _print_separator(column_widths)
 
