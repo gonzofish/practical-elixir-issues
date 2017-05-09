@@ -1,16 +1,23 @@
 # Issues
 
-**TODO: Add description**
+Gets a list of issues for a GitHub library
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `issues` to your list of dependencies in `mix.exs`:
+Run `mix escript.build` from the command line
 
-```elixir
-def deps do
-  [{:issues, "~> 0.1.0"}]
-end
+## Usage
+
+Once built (see above), from the command line:
+
+```shell
+./issues <username> <project> [<number of issues>]
+```
+
+To display help you can do `-h` or `--help`:
+
+```shell
+./issues -h
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
